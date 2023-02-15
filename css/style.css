@@ -1,0 +1,172 @@
+/*CSS GRID Práctica*/
+.title-grid{
+	color: black;
+	font-family: 'Unbounded', cursive;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+
+	margin: 20px;
+}
+
+.grid-container{
+	width: 90%;
+	max-width: 1000px;
+	border: 10px solid black;
+	margin: auto;
+	height: 500px;
+
+	font-size: 50px;
+	font-family: 'Unbounded', cursive;
+	line-height: 50px;
+	text-align: center;
+
+	/*Activamos grid*/
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: repeat(4,1fr);
+	column-gap: 10px;
+	row-gap: 10px;
+	/*justify-items: end;/*Eje Horizontal*/
+	/*align-items: end;*/ /*Eje vertical*/
+
+}
+
+/*Divs que están diréctamente dentro del grid-container*/
+.grid-container > div {
+	padding: 20px;
+	color: #fff;
+	background: #2f89fc;
+}
+
+/*Grid Áreas*/
+#grilla{
+	display: grid;
+	grid-template-areas: 
+	"nav 	header 		header"
+	"nav 	productos 	publicidad"
+	"nav 	servicios 	publicidad"
+	"nav 	footer 		footer"
+	;
+	grid-template-rows: 100px 1fr 1fr 75px;
+	grid-template-columns: 20% auto 15%;
+}
+
+.border{
+	border: 1px solid black;
+}
+
+#grilla header {
+	grid-area: header;
+	background-color: lightblue;
+}
+
+#grilla footer{
+	grid-area: footer;
+	background-color: lightcoral;
+}
+
+#productos{
+	grid-area: productos;
+	background-color: lightgreen;
+}
+
+#servicios{
+	grid-area: servicios;
+	background-color: brown;
+}
+
+nav {
+	grid-area: nav;
+	background-color: blueviolet;
+}
+
+aside {
+	grid-area: publicidad;
+	background-color: darkmagenta;
+}
+
+/* media queries */
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+/* grid responsive */
+#grilla {
+	grid-template-rows: 100px 1fr 1fr 1fr 60px;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-areas: 
+	"header    header 	 header    header"
+	"nav       nav    	 nav   	   nav"
+	"productos productos productos publicidad"
+	"servicios servicios servicios publicidad"
+	"footer    footer    footer    footer"
+	;
+}
+}
+
+/* metodologia bem */
+
+.contenedor {
+	max-width: 500px;
+	width: 100%;
+	margin-left: 15px;
+}
+
+.tarjeta {
+	width: 600px;
+	border: 5px solid black;
+
+}
+
+.tarjeta__miniatura {
+	height: 200px;
+}
+
+.tarjeta__imagen {
+	width: 60%;
+}
+
+.tarjeta__textos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	margin-bottom: 20px;
+	color: black;
+}
+
+.tarjeta__enlace {
+	color: rgb(172, 64, 118);
+	padding: 10px auto;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.tarjeta__parrafo {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	max-width: 90%;
+	line-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+
+}
+
+.boton {
+	font-size: 14px;
+	padding: 8px 35px;
+	background-color: black;
+	border: 25px;
+	text-decoration: none;
+	color: white;
+}
+
+.boton--alternativo {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.carousel-item {
+	max-width: 70rem;
+}
